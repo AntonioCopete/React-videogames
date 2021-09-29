@@ -38,7 +38,6 @@ export default class MyComponent extends React.Component {
   }
   render() {
     const {
-      id,
       title,
       thumbnail,
       description,
