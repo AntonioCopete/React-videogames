@@ -51,4 +51,23 @@
             margin: 0.2rem 0;
         }
     }
+
+    .info-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        .info-links-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                color: blue;
+            }
+        }
+    }
 }

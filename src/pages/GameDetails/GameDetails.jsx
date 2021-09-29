@@ -76,15 +76,17 @@ export default class MyComponent extends React.Component {
             <p>{description}</p>
           </div>
 
-          <p>
-            <span>
+          <div className="info-links">
+            <p>
               <b>Links:</b>
-            </span>
-            <a href="https://www.freetogame.com/dauntless">Freetogame</a>
-            <a href="https://www.freetogame.com/open/dauntless">
-              Official Website
-            </a>
-          </p>
+            </p>
+            <div className="info-links-group">
+              <a href="https://www.freetogame.com/dauntless">Freetogame page</a>
+              <a href="https://www.freetogame.com/open/dauntless">
+                Download game
+              </a>
+            </div>
+          </div>
         </div>
       </>
     );
