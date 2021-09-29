@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import GameDetails from "./pages/GameDetails";
 import React from "react";
+import Header from "./components/Header";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -78,11 +79,7 @@ export default class App extends React.Component {
     } = this.state.gameDetails;
     return (
       <BrowserRouter>
-        <header>
-          <Link to="/">
-            <h1>Video Games</h1>
-          </Link>
-        </header>
+        <Header />
 
         <Switch>
           <Route
