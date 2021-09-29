@@ -6,16 +6,49 @@
     max-width: 50rem;
     margin: 0 auto;
 
+
     .img-info {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        width: 100%;
+        width: 80%;
+        gap: 2rem;
+        padding-bottom: 2rem;
+
+        img {
+            width: 100%;
+        }
+
+        .game-info {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+
+            .info-aside {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
 
     }
 
-    
+    .info-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-    img {
+        p {
+            margin: 0.2rem 0;
+        }
     }
 }

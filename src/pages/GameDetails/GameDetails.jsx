@@ -22,7 +22,7 @@ export default class MyComponent extends React.Component {
       platform,
       publisher,
       developer,
-      release_date,
+      releaseDate,
     } = this.props;
     return (
       <>
@@ -32,48 +32,54 @@ export default class MyComponent extends React.Component {
             <img src={thumbnail} alt={title} />
 
             <div className="game-info">
-              <p>
-                <span>
+              <div className="info-aside">
+                <p>
                   <b>Genre:</b>
-                </span>{" "}
-                {genre}
-              </p>
-              <p>
-                <span>
+                </p>
+                <p>{genre}</p>
+              </div>
+
+              <div className="info-aside">
+                <p>
                   <b>Platform:</b>
-                </span>{" "}
-                {platform}
-              </p>
-              <p>
-                <span>
+                </p>
+                <p>{platform}</p>
+              </div>
+
+              <div className="info-aside">
+                <p>
                   <b>Publisher:</b>
-                </span>{" "}
-                {publisher}
-              </p>
-              <p>
-                <span>
+                </p>
+                <p>{publisher}</p>
+              </div>
+
+              <div className="info-aside">
+                <p>
                   <b>Developer:</b>
-                </span>{" "}
-                {developer}
-              </p>
-              <p>
-                <span>
+                </p>
+                <p>{developer}</p>
+              </div>
+
+              <div className="info-aside">
+                <p>
                   <b>Release date:</b>
-                </span>{" "}
-                {release_date}
-              </p>
+                </p>
+                <p>{releaseDate}</p>
+              </div>
             </div>
           </div>
-          <p>
-            <span>
+
+          <div className="info-description">
+            <p>
               <b>Description:</b>
-            </span>{" "}
-            {description}
-          </p>
+            </p>
+            <p>{description}</p>
+          </div>
+
           <p>
             <span>
               <b>Links:</b>
-            </span>{" "}
+            </span>
             <a href="https://www.freetogame.com/dauntless">Freetogame</a>
             <a href="https://www.freetogame.com/open/dauntless">
               Official Website

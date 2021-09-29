@@ -9,10 +9,15 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      gameDetailed: {},
+      gameList: [],
+      gameDetails: {},
     };
 
     this.getGameDetails = this.getGameDetails.bind(this);
+  }
+
+  componentDidMount() {
+    this.getGameList();
   }
 
   getGameDetails(id) {
@@ -31,14 +36,36 @@ export default class App extends React.Component {
         return response.json();
       })
       .then((data) => {
-        this.setState({ gameDetailed: data });
+        this.setState({ gameDetails: data });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
+  getGameList() {
+    return fetch(
+      "https://free-to-play-games-database.p.rapidapi.com/api/games",
+      {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
+          "x-rapidapi-key":
+            "23e233b049msh4485b68fa7318bdp11fd05jsn2ac4d49d92a1",
+        },
+      }
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({ gameList: data });
       })
       .catch((err) => {
         console.error(err);
       });
   }
   render() {
-    console.log(this.state.gameDetailed);
     const {
       title,
       thumbnail,
@@ -48,7 +75,7 @@ export default class App extends React.Component {
       publisher,
       developer,
       release_date,
-    } = this.state.gameDetailed;
+    } = this.state.gameDetails;
     return (
       <BrowserRouter>
         <header>
@@ -78,7 +105,7 @@ export default class App extends React.Component {
           ></Route>
 
           <Route path="/">
-            <Home />
+            <Home gameList={this.state.gameList} />
           </Route>
         </Switch>
       </BrowserRouter>

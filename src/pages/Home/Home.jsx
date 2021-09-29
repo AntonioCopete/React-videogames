@@ -3,6 +3,6 @@ import GamesList from "../../components/GamesList";
 
 export default class Home extends Component {
   render() {
-    return <GamesList />;
+    return <GamesList gameList={this.props.gameList} />;
   }
 }
