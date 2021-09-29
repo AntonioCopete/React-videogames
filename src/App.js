@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import GameDetails from "./pages/GameDetails";
@@ -80,7 +80,6 @@ export default class App extends React.Component {
     return (
       <BrowserRouter>
         <Header />
-
         <Switch>
           <Route
             exact
@@ -100,7 +99,6 @@ export default class App extends React.Component {
               />
             )}
           ></Route>
-
           <Route path="/">
             <Home gameList={this.state.gameList} />
           </Route>

@@ -20,7 +20,9 @@
 
         img {
             width: 100%;
+            border-radius: 25px;
         }
+
 
         .game-info {
             width: 100%;
@@ -71,6 +73,10 @@
 
             a {
                 color: rgb(197, 146, 146);
+
+                &:hover {
+                    color: rgb(192, 89, 89);
+                }
             }
         }
     }
