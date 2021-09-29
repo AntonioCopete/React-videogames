@@ -5,6 +5,9 @@
     align-items: center;
     max-width: 50rem;
     margin: 0 auto;
+    background-color: rgb(58, 43, 70);
+    padding: 2rem 0;
+    border-radius: 25px;
 
 
     .img-info {
@@ -46,6 +49,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 80%;
 
         p {
             margin: 0.2rem 0;
@@ -66,8 +70,13 @@
             align-items: center;
 
             a {
-                color: blue;
+                color: rgb(197, 146, 146);
             }
         }
     }
+}
+
+h2,
+p {
+    color: rgb(187, 187, 187)
 }
