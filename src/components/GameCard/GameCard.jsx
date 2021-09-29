@@ -15,9 +15,8 @@ export default class GameCard extends Component {
       developer,
       releaseDate,
     } = this.props.game;
-    console.log(this.props.game);
     return (
-      <li className="game-card" key={id}>
+      <li className="game-card">
         <Link to={"/games/" + id}>
           <h2>{title}</h2>
           <img src={thumbnail} alt={title} />

@@ -1,28 +1,31 @@
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
-import GamesList from "./components/GamesList";
-import GameDetails from "./components/GameDetails";
+import Home from "./pages/Home";
+import GameDetails from "./pages/GameDetails";
+import React from "react";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <header>
-        <Link to="/">
-          <h1>Video Games</h1>
-        </Link>
-      </header>
+export default class App extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <header>
+          <Link to="/">
+            <h1>Video Games</h1>
+          </Link>
+        </header>
 
-      <Switch>
-        <Route exact path="/games/:gameId">
-          <GameDetails />
-        </Route>
+        <Switch>
+          <Route
+            exact
+            path="/games/:gameId"
+            render={(routeProps) => <GameDetails {...routeProps} />}
+          ></Route>
 
-        <Route path="/">
-          <GamesList />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  );
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
-
-export default App;
