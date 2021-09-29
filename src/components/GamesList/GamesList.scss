@@ -1,0 +1,7 @@
+.games-grid {
+    list-style: none;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 30rem);
+    gap: 4rem;
+}
