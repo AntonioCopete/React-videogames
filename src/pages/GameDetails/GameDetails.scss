@@ -1,0 +1,21 @@
+.game-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 50rem;
+    margin: 0 auto;
+
+    .img-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+
+    }
+
+    
+
+    img {
+    }
+}
