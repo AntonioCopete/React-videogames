@@ -41,7 +41,7 @@ export default class GamesList extends Component {
       <div className="d-flex justify-content-center">
         <ul className="games-grid">
           {games.map((game) => {
-            return <GameCard key={games.id} game={game} />;
+            return <GameCard key={game.id} game={game} />;
           })}
         </ul>
       </div>
