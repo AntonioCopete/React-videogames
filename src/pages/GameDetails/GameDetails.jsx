@@ -3,10 +3,7 @@ import "./GameDetails.scss";
 
 export default class MyComponent extends React.Component {
   componentDidMount() {
-    setTimeout(() => {
-      this.props.handleDetails(this.props.match.params.gameTitle);
-    }, 250);
-    console.log(this.props.match.params);
+    this.props.handleDetails(this.props.match.params.gameTitle);
   }
 
   render() {

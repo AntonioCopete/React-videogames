@@ -24,42 +24,19 @@ export default class App extends React.Component {
   getGameDetails(gameTitle) {
     const fixedTitle = gameTitle.split("-").join(" ");
     const test = this.state.gameList.find((game) => game.title === fixedTitle);
-    console.log(this.state.gameDetails);
+    console.log(test);
 
-    return fetch(
-      `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${test.id}`,
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-          "x-rapidapi-key":
-            "23e233b049msh4485b68fa7318bdp11fd05jsn2ac4d49d92a1",
-        },
-      }
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        this.setState({ gameDetails: data });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    this.setState({ gameDetails: test });
   }
 
-  async getGameList() {
-    await fetch(
-      "https://free-to-play-games-database.p.rapidapi.com/api/games",
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-          "x-rapidapi-key":
-            "23e233b049msh4485b68fa7318bdp11fd05jsn2ac4d49d92a1",
-        },
-      }
-    )
+  getGameList() {
+    fetch("https://free-to-play-games-database.p.rapidapi.com/api/games", {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
+        "x-rapidapi-key": "23e233b049msh4485b68fa7318bdp11fd05jsn2ac4d49d92a1",
+      },
+    })
       .then((response) => {
         return response.json();
       })
@@ -74,7 +51,7 @@ export default class App extends React.Component {
     const {
       title,
       thumbnail,
-      description,
+      short_description,
       genre,
       platform,
       publisher,
@@ -95,7 +72,7 @@ export default class App extends React.Component {
                 {...routeProps}
                 title={title}
                 thumbnail={thumbnail}
-                description={description}
+                description={short_description}
                 genre={genre}
                 platform={platform}
                 publisher={publisher}
