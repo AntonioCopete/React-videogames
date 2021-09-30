@@ -12,14 +12,15 @@
 
     .img-info {
         display: flex;
-        flex-direction: row;
         justify-content: space-around;
+        align-items: center;
         width: 80%;
         gap: 2rem;
         padding-bottom: 2rem;
 
         img {
             width: 100%;
+            height: 100%;
             border-radius: 25px;
         }
 
@@ -33,10 +34,12 @@
             gap: 2rem;
 
             .info-aside {
+                width: 100%;
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
+                flex-direction: row;
+                justify-content: flex-start;
                 align-items: center;
+                gap: 1rem;
 
                 p {
                     margin: 0;
@@ -44,6 +47,17 @@
             }
         }
 
+    }
+
+    @media (max-width:760px) {
+        .img-info {
+            flex-direction: column;
+        }
+
+        .info-aside {
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     .info-description {

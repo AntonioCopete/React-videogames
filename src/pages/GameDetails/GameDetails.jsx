@@ -10,7 +10,7 @@ export default class MyComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.handleDetails(this.props.match.params.gameId);
+    this.props.handleDetails(this.props.match.params.gameTitle);
   }
 
   render() {

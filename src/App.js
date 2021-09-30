@@ -21,9 +21,13 @@ export default class App extends React.Component {
     this.getGameList();
   }
 
-  getGameDetails(id) {
+  getGameDetails(gameTitle) {
+    const fixedTitle = gameTitle.split("-").join(" ");
+    const test = this.state.gameList.find((game) => game.title === fixedTitle);
+    console.log(test);
+
     return fetch(
-      `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`,
+      `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${test.id}`,
       {
         method: "GET",
         headers: {
@@ -83,7 +87,7 @@ export default class App extends React.Component {
         <Switch>
           <Route
             exact
-            path="/games/:gameId"
+            path="/games/:gameTitle"
             render={(routeProps) => (
               <GameDetails
                 {...routeProps}

@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 
 export default class GameCard extends Component {
   render() {
-    const { id, title, thumbnail } = this.props.game;
+    const { title, thumbnail } = this.props.game;
+    const browserRouterTitle = title.split(" ").join("-");
     return (
       <li className="game-card">
-        <Link to={"/games/" + id}>
+        <Link to={"/games/" + browserRouterTitle}>
           <h2>{title}</h2>
           <img src={thumbnail} alt={title} />
         </Link>
