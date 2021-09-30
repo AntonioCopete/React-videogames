@@ -5,7 +5,7 @@ export default class MyComponent extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.props.handleDetails(this.props.match.params.gameTitle);
-    }, 100);
+    }, 250);
     console.log(this.props.match.params);
   }
 
