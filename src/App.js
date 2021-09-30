@@ -24,7 +24,7 @@ export default class App extends React.Component {
   getGameDetails(gameTitle) {
     const fixedTitle = gameTitle.split("-").join(" ");
     const test = this.state.gameList.find((game) => game.title === fixedTitle);
-    // console.log(test);
+    console.log(this.state.gameDetails);
 
     return fetch(
       `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${test.id}`,
@@ -48,8 +48,8 @@ export default class App extends React.Component {
       });
   }
 
-  getGameList() {
-    return fetch(
+  async getGameList() {
+    await fetch(
       "https://free-to-play-games-database.p.rapidapi.com/api/games",
       {
         method: "GET",

@@ -3,7 +3,10 @@ import "./GameDetails.scss";
 
 export default class MyComponent extends React.Component {
   componentDidMount() {
-    this.props.handleDetails(this.props.match.params.gameTitle);
+    setTimeout(() => {
+      this.props.handleDetails(this.props.match.params.gameTitle);
+    }, 100);
+    console.log(this.props.match.params);
   }
 
   render() {
@@ -19,7 +22,6 @@ export default class MyComponent extends React.Component {
       freetogame_profile_url,
       game_url,
     } = this.props;
-    console.log(this.props.match.params);
 
     return (
       <>
