@@ -8,7 +8,7 @@ export default class Header extends Component {
       <>
         <header>
           <Link to="/">
-            <h1>Video Games</h1>
+            <h1>Free to play video games</h1>
           </Link>
         </header>
       </>

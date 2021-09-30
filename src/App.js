@@ -24,7 +24,7 @@ export default class App extends React.Component {
   getGameDetails(gameTitle) {
     const fixedTitle = gameTitle.split("-").join(" ");
     const test = this.state.gameList.find((game) => game.title === fixedTitle);
-    console.log(test);
+    // console.log(test);
 
     return fetch(
       `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${test.id}`,
@@ -80,6 +80,8 @@ export default class App extends React.Component {
       publisher,
       developer,
       release_date,
+      freetogame_profile_url,
+      game_url,
     } = this.state.gameDetails;
     return (
       <BrowserRouter>
@@ -99,6 +101,8 @@ export default class App extends React.Component {
                 publisher={publisher}
                 developer={developer}
                 releaseDate={release_date}
+                freetogame_profile_url={freetogame_profile_url}
+                game_url={game_url}
                 handleDetails={this.getGameDetails}
               />
             )}

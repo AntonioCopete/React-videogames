@@ -2,13 +2,6 @@ import React from "react";
 import "./GameDetails.scss";
 
 export default class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      game: {},
-    };
-  }
-
   componentDidMount() {
     this.props.handleDetails(this.props.match.params.gameTitle);
   }
@@ -23,7 +16,11 @@ export default class MyComponent extends React.Component {
       publisher,
       developer,
       releaseDate,
+      freetogame_profile_url,
+      game_url,
     } = this.props;
+    console.log(this.props.match.params);
+
     return (
       <>
         <div className="game-details">
@@ -81,10 +78,8 @@ export default class MyComponent extends React.Component {
               <b>Links:</b>
             </p>
             <div className="info-links-group">
-              <a href="https://www.freetogame.com/dauntless">Freetogame page</a>
-              <a href="https://www.freetogame.com/open/dauntless">
-                Download game
-              </a>
+              <a href={freetogame_profile_url}>Freetogame page</a>
+              <a href={game_url}>Download game</a>
             </div>
           </div>
         </div>
